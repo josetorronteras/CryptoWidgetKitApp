@@ -11,11 +11,15 @@ import Foundation
 class CryptoAPIService {
     
     // MARK: - Dependencies
-    private let urlSession: URLSession
+    private let session: URLSessionProtocol
     
     // MARK: - Init
-    init(urlSession: URLSession = .shared) {
-        self.urlSession = urlSession
+    init(session: URLSessionProtocol) {
+        self.session = session
+    }
+    
+    convenience init() {
+        self.init(session: URLSession.shared)
     }
 }
 
@@ -25,10 +29,8 @@ extension CryptoAPIService {
     /// Fetches the list of cryptocurrencies
     /// - Returns: An array of `Crypto` objects.
     func fetchRetrieveFullList() async throws -> Cryptos {
-        var request = URLRequest(url: CryptoAPIURLs.fullList.url)
-        request.httpMethod = "GET"
-        request.addValue("application/json", forHTTPHeaderField: "Accept")
-        let (data, _) = try await urlSession.data(for: request)
+        let request: URLRequest = .init(endpoint: .fullList, method: .get)
+        let (data, _) = try await session.data(for: request)
         return try JSONDecoder().decode(Cryptos.self, from: data)
     }
 }

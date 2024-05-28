@@ -1,5 +1,5 @@
 //
-//  CryptoAPIURLs.swift
+//  CryptoAPIEndpoint.swift
 //  CryptoWidgetKitApp
 //
 //  Created by Jose Jesus Torronteras Hernandez on 28/5/24.
@@ -7,9 +7,12 @@
 
 import Foundation
 
-// MARK: - CryptoAPIURLs
-enum CryptoAPIURLs {
+// MARK: - CryptoAPIEndpoint
+enum CryptoAPIEndpoint {
     case fullList
+}
+
+extension CryptoAPIEndpoint {
     
     var url: URL {
         switch self {
@@ -18,4 +21,3 @@ enum CryptoAPIURLs {
         }
     }
 }
-
