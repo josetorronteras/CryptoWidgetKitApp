@@ -8,17 +8,24 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @Environment(CryptoViewModel.self) var cryptoViewModel
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            List(cryptoViewModel.cryptos, id: \.coinInfo.id) { crypto in
+                HStack {
+                    Text(crypto.coinInfo.fullName)
+                    Spacer()
+                    Text(crypto.display?.usd.price ?? "0")
+                }
+            }
+            .task { await cryptoViewModel.fetch() }
         }
-        .padding()
     }
 }
 
 #Preview {
     ContentView()
+        .environment(CryptoViewModel())
 }

@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct CryptoWidgetKitApp: App {
+    
+    @State var cryptoViewModel = CryptoViewModel()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(cryptoViewModel)
         }
     }
 }
