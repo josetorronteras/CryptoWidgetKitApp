@@ -41,4 +41,10 @@ jobs:
           xcodebuild \
             -scheme "$TEST_SCHEME" \
             -destination "platform=iOS Simulator,name=${SIMULATOR},OS=${{ matrix.os_version }}" \
+            -enableCodeCoverage YES \
             test
+      - name: Lcov file generation
+        run: |
+          xcrun llvm-cov export -format="lcov" -instr-profile "DerivedData/Build/Intermediates.noindex/CryptoWidgetKitApp.build/Debug-iphonesimulator/CryptoWidgetKitApp.build/Objects-normal/x86_64/CryptoWidgetKitAppTests.gcda" -output-file "lcov.info"
+      - name: Coveralls
+        uses: coverallsapp/github-action@v2
