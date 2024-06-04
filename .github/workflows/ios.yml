@@ -41,7 +41,7 @@ jobs:
           xcodebuild \
             -scheme "$TEST_SCHEME" \
             -destination "platform=iOS Simulator,name=${SIMULATOR},OS=${{ matrix.os_version }}" \
-            -enableCodeCoverage YES \ 
+            -enableCodeCoverage YES \
             test
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v4.0.1
