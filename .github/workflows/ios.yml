@@ -20,8 +20,8 @@ jobs:
       fail-fast: true
       matrix:
         # https://github.com/actions/runner-images/blob/main/images/macos/macos-14-Readme.md#installed-simulators
-        xcode_version: [ "15.0.1", "15.4" ]
-        os_version: [ "17.0.1", "17.5" ]
+        xcode_version: [ "15.4" ]
+        os_version: [ "17.0.1"]
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -45,6 +45,6 @@ jobs:
             test
       - name: Lcov file generation
         run: |
-          xcrun llvm-cov export -format="lcov" -instr-profile "DerivedData/Build/Intermediates.noindex/CryptoWidgetKitApp.build/Debug-iphonesimulator/CryptoWidgetKitApp.build/Objects-normal/x86_64/CryptoWidgetKitAppTests.gcda" -output-file "lcov.info"
+          xcrun llvm-cov export -format="lcov" .build/debug/EmailValidationPackageTests.xctest/Contents/MacOS/EmailValidationPackageTests -instr-profile .build/debug/codecov/default.profdata -ignore-filename-regex=".build|Tests"  > info.lcov
       - name: Coveralls
         uses: coverallsapp/github-action@v2
