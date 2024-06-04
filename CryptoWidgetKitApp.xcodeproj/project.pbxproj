@@ -50,6 +50,7 @@
 		4D8251C52C05EAD700DD32A3 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		4D8251C72C05EBBB00DD32A3 /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
 		4D8251C92C05EC4500DD32A3 /* URLSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProtocol.swift; sourceTree = "<group>"; };
+		4D8251E42C0F7B0300DD32A3 /* CryptoWidgetKitApp.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = CryptoWidgetKitApp.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +114,7 @@
 		4D7266592C049D820035E348 /* CryptoWidgetKitAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				4D8251E42C0F7B0300DD32A3 /* CryptoWidgetKitApp.xctestplan */,
 				4D8251C02C05E9F100DD32A3 /* Mocks */,
 				4D8251C12C05E9FE00DD32A3 /* Network */,
 				4D72665A2C049D820035E348 /* CryptoWidgetKitAppTests.swift */,
