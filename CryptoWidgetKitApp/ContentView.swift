@@ -14,26 +14,38 @@ struct ContentView: View {
     var body: some View {
         @Bindable var cryptoViewModel = cryptoViewModel
         NavigationStack {
-            List(cryptoViewModel.cryptos, id: \.coinInfo.id) { crypto in
-                HStack {
-                    Text(crypto.coinInfo.fullName)
-                    Spacer()
-                    Text(crypto.display?.usd.price ?? "0")
+            List {
+                ForEach(cryptoViewModel.cryptos, id: \.coinInfo.id){ crypto in
+                    HStack {
+                        Text(crypto.coinInfo.fullName)
+                        Spacer()
+                        Text(crypto.display?.usd.price ?? "0")
+                    }
+                }
+                if !cryptoViewModel.showSkeleton {
+                    Section {
+                        Button(action: {
+                            Task {
+                                await cryptoViewModel.loadMoreData()
+                            }
+                        }, label: {
+                            if cryptoViewModel.isLoading {
+                                ProgressView()
+                            } else {
+                                Text("Load more")
+                            }
+                        })
+                    }
                 }
             }
-            .redacted(reason: cryptoViewModel.isLoading ? .placeholder : [])
-            .task { await cryptoViewModel.fetch() }
-            .refreshable { await cryptoViewModel.fetch() }
-            .alert(isPresented: $cryptoViewModel.showError, content: {
-                Alert(title: Text("An error occurred, try again later"),
-                      dismissButton: .default(
-                        Text("Retry"),
-                        action: {
-                            Task {
-                                await cryptoViewModel.fetch()
-                            }
-                        }))
-            })
+            .redacted(reason: cryptoViewModel.showSkeleton ? .placeholder : [])
+            .task { await cryptoViewModel.fetchInitialData() }
+            .refreshable { await cryptoViewModel.refreshData() }
+            .errorAlert(isPresented: $cryptoViewModel.showError) {
+                Task {
+                    await cryptoViewModel.refreshData()
+                }
+            }
             .toolbar {
                 ToolbarItemGroup(placement: .bottomBar) {
                     Text("API Cache 120 seconds")

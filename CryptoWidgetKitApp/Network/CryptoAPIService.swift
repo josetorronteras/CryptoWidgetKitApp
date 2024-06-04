@@ -6,12 +6,19 @@
 //
 
 import Foundation
+import os
 
 // MARK: - CryptoAPIService
 class CryptoAPIService {
     
     // MARK: - Dependencies
     private let session: URLSessionProtocol
+    
+    // MARK: - Properties
+    private static let logger = Logger(
+        subsystem: Bundle.main.bundleIdentifier!,
+        category: String(describing: CryptoAPIService.self)
+    )
     
     // MARK: - Init
     init(session: URLSessionProtocol) {
@@ -28,9 +35,11 @@ extension CryptoAPIService {
     
     /// Fetches the list of cryptocurrencies
     /// - Returns: An array of `Crypto` objects.
-    func fetchRetrieveFullList() async throws -> Cryptos {
-        let request: URLRequest = .init(endpoint: .fullList, method: .get)
+    func fetchRetrieveTopList(page: Int? = nil) async throws -> Cryptos {
+        let request: URLRequest = .init(endpoint: .topList(page: page), method: .get)
+        Self.logger.debug("Fetching top list with request: \(request)")
         let (data, _) = try await session.data(for: request)
+        Self.logger.debug("Received response with data: \(data)")
         return try JSONDecoder().decode(Cryptos.self, from: data)
     }
 }

@@ -11,7 +11,6 @@
 		4D72664C2C049D800035E348 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D72664B2C049D800035E348 /* ContentView.swift */; };
 		4D72664E2C049D810035E348 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D72664D2C049D810035E348 /* Assets.xcassets */; };
 		4D7266512C049D810035E348 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D7266502C049D810035E348 /* Preview Assets.xcassets */; };
-		4D72665B2C049D820035E348 /* CryptoWidgetKitAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D72665A2C049D820035E348 /* CryptoWidgetKitAppTests.swift */; };
 		4D8251B32C05CDDB00DD32A3 /* CryptoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8251B22C05CDDB00DD32A3 /* CryptoModel.swift */; };
 		4D8251B62C05D21D00DD32A3 /* CryptoAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8251B52C05D21D00DD32A3 /* CryptoAPIService.swift */; };
 		4D8251B82C05D2A200DD32A3 /* CryptoAPIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8251B72C05D2A100DD32A3 /* CryptoAPIEndpoint.swift */; };
@@ -21,6 +20,9 @@
 		4D8251C62C05EAD700DD32A3 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8251C52C05EAD700DD32A3 /* HTTPMethod.swift */; };
 		4D8251C82C05EBBB00DD32A3 /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8251C72C05EBBB00DD32A3 /* MockURLSession.swift */; };
 		4D8251CA2C05EC4500DD32A3 /* URLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8251C92C05EC4500DD32A3 /* URLSessionProtocol.swift */; };
+		4D8251D12C0879E800DD32A3 /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8251D02C0879E800DD32A3 /* View+.swift */; };
+		4D8251D32C0DAD5000DD32A3 /* CryptoViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8251D22C0DAD5000DD32A3 /* CryptoViewModelTests.swift */; };
+		4D8251D62C0DBAFC00DD32A3 /* XCTestCase+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8251D52C0DBAFC00DD32A3 /* XCTestCase+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +42,6 @@
 		4D72664D2C049D810035E348 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D7266502C049D810035E348 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4D7266562C049D820035E348 /* CryptoWidgetKitAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CryptoWidgetKitAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4D72665A2C049D820035E348 /* CryptoWidgetKitAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoWidgetKitAppTests.swift; sourceTree = "<group>"; };
 		4D8251B22C05CDDB00DD32A3 /* CryptoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoModel.swift; sourceTree = "<group>"; };
 		4D8251B52C05D21D00DD32A3 /* CryptoAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoAPIService.swift; sourceTree = "<group>"; };
 		4D8251B72C05D2A100DD32A3 /* CryptoAPIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoAPIEndpoint.swift; sourceTree = "<group>"; };
@@ -50,6 +51,9 @@
 		4D8251C52C05EAD700DD32A3 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		4D8251C72C05EBBB00DD32A3 /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
 		4D8251C92C05EC4500DD32A3 /* URLSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProtocol.swift; sourceTree = "<group>"; };
+		4D8251D02C0879E800DD32A3 /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
+		4D8251D22C0DAD5000DD32A3 /* CryptoViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoViewModelTests.swift; sourceTree = "<group>"; };
+		4D8251D52C0DBAFC00DD32A3 /* XCTestCase+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,7 @@
 				4D72664B2C049D800035E348 /* ContentView.swift */,
 				4D8251B12C05CDC400DD32A3 /* Models */,
 				4D8251B92C05DA6000DD32A3 /* ViewModels */,
+				4D8251CC2C0878B900DD32A3 /* Views */,
 				4D8251B42C05D20B00DD32A3 /* Network */,
 				4D7266732C049D930035E348 /* Resources */,
 				4D72664F2C049D810035E348 /* Preview Content */,
@@ -113,9 +118,10 @@
 		4D7266592C049D820035E348 /* CryptoWidgetKitAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				4D8251D42C0DBAEC00DD32A3 /* Extensions */,
 				4D8251C02C05E9F100DD32A3 /* Mocks */,
 				4D8251C12C05E9FE00DD32A3 /* Network */,
-				4D72665A2C049D820035E348 /* CryptoWidgetKitAppTests.swift */,
+				4D8251D22C0DAD5000DD32A3 /* CryptoViewModelTests.swift */,
 			);
 			path = CryptoWidgetKitAppTests;
 			sourceTree = "<group>";
@@ -178,6 +184,30 @@
 				4D8251C92C05EC4500DD32A3 /* URLSessionProtocol.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		4D8251CC2C0878B900DD32A3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4D8251CF2C0879D400DD32A3 /* Extensions */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4D8251CF2C0879D400DD32A3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4D8251D02C0879E800DD32A3 /* View+.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4D8251D42C0DBAEC00DD32A3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4D8251D52C0DBAFC00DD32A3 /* XCTestCase+.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,6 +314,7 @@
 				4D8251B32C05CDDB00DD32A3 /* CryptoModel.swift in Sources */,
 				4D8251B62C05D21D00DD32A3 /* CryptoAPIService.swift in Sources */,
 				4D72664C2C049D800035E348 /* ContentView.swift in Sources */,
+				4D8251D12C0879E800DD32A3 /* View+.swift in Sources */,
 				4D8251B82C05D2A200DD32A3 /* CryptoAPIEndpoint.swift in Sources */,
 				4D8251C62C05EAD700DD32A3 /* HTTPMethod.swift in Sources */,
 				4D72664A2C049D800035E348 /* CryptoWidgetKitApp.swift in Sources */,
@@ -297,7 +328,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D8251C82C05EBBB00DD32A3 /* MockURLSession.swift in Sources */,
-				4D72665B2C049D820035E348 /* CryptoWidgetKitAppTests.swift in Sources */,
+				4D8251D32C0DAD5000DD32A3 /* CryptoViewModelTests.swift in Sources */,
+				4D8251D62C0DBAFC00DD32A3 /* XCTestCase+.swift in Sources */,
 				4D8251BF2C05E9BB00DD32A3 /* CryptoAPIServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
