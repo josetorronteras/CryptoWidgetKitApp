@@ -41,10 +41,9 @@ jobs:
           xcodebuild \
             -scheme "$TEST_SCHEME" \
             -destination "platform=iOS Simulator,name=${SIMULATOR},OS=${{ matrix.os_version }}" \
-            -enableCodeCoverage YES \
+            -enableCodeCoverage YES \ 
             test
-      - name: Lcov file generation
-        run: |
-          xcrun llvm-cov export -format="lcov" .build/debug/EmailValidationPackageTests.xctest/Contents/MacOS/EmailValidationPackageTests -instr-profile .build/debug/codecov/default.profdata -ignore-filename-regex=".build|Tests"  > info.lcov
-      - name: Coveralls
-        uses: coverallsapp/github-action@v2
+      - name: Upload coverage reports to Codecov
+          uses: codecov/codecov-action@v4.0.1
+          with:
+            token: ${{ secrets.CODECOV_TOKEN }}
