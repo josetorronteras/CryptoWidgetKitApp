@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @Environment(CryptoViewModel.self) var cryptoViewModel
+    @Environment(CryptoDataViewModel.self) var cryptoViewModel
     
     var body: some View {
         @Bindable var cryptoViewModel = cryptoViewModel
@@ -60,5 +60,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .environment(CryptoViewModel())
+        .environment(CryptoDataViewModel())
 }

@@ -1,5 +1,5 @@
 //
-//  CryptoViewModelTests.swift
+//  CryptoDataViewModelTests.swift
 //  CryptoWidgetKitAppTests
 //
 //  Created by Jose Jesus Torronteras Hernandez on 3/6/24.
@@ -9,17 +9,17 @@ import XCTest
 @testable import CryptoWidgetKitApp
 
 // MARK: - CryptoViewModelTests
-final class CryptoViewModelTests: XCTestCase {
+final class CryptoDataViewModelTests: XCTestCase {
     
     private var session: MockURLSession!
     private var apiService: CryptoAPIService!
-    private var sut: CryptoViewModel!
+    private var sut: CryptoDataViewModel!
     
     override func setUp() {
         super.setUp()
         session = MockURLSession()
         apiService = CryptoAPIService(session: session)
-        sut = CryptoViewModel(apiService: apiService)
+        sut = CryptoDataViewModel(apiService: apiService)
     }
     
     override func tearDown() {
@@ -31,7 +31,7 @@ final class CryptoViewModelTests: XCTestCase {
 }
 
 // MARK: - Tests
-extension CryptoViewModelTests {
+extension CryptoDataViewModelTests {
     
     func test_fetchInitialData_success() async {
         // Given
@@ -108,7 +108,7 @@ extension CryptoViewModelTests {
 }
 
 // MARK: - Data
-fileprivate extension CryptoViewModelTests {
+fileprivate extension CryptoDataViewModelTests {
     
     var fullListData: Data {
         Data("{\"Data\":[{\"CoinInfo\":{\"Id\":\"1182\",\"Name\":\"BTC\",\"FullName\":\"Bitcoin\",\"Internal\":\"BTC\",\"ImageUrl\":\"/media/37746251/btc.png\"},\"DISPLAY\":{\"USD\":{\"PRICE\":\"$ 68,512.1\",\"CHANGEPCT24HOUR\":\"-0.04\"}}},{\"CoinInfo\":{\"Id\":\"7605\",\"Name\":\"ETH\",\"FullName\":\"Ethereum\",\"Internal\":\"ETH\",\"ImageUrl\":\"/media/37746238/eth.png\"},\"DISPLAY\":{\"USD\":{\"PRICE\":\"$ 3,901.48\",\"CHANGEPCT24HOUR\":\"-0.07\"}}}]}".utf8)

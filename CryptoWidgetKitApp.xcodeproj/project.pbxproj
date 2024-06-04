@@ -14,15 +14,16 @@
 		4D8251B32C05CDDB00DD32A3 /* CryptoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8251B22C05CDDB00DD32A3 /* CryptoModel.swift */; };
 		4D8251B62C05D21D00DD32A3 /* CryptoAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8251B52C05D21D00DD32A3 /* CryptoAPIService.swift */; };
 		4D8251B82C05D2A200DD32A3 /* CryptoAPIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8251B72C05D2A100DD32A3 /* CryptoAPIEndpoint.swift */; };
-		4D8251BB2C05DA7500DD32A3 /* CryptoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8251BA2C05DA7500DD32A3 /* CryptoViewModel.swift */; };
+		4D8251BB2C05DA7500DD32A3 /* CryptoDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8251BA2C05DA7500DD32A3 /* CryptoDataViewModel.swift */; };
 		4D8251BF2C05E9BB00DD32A3 /* CryptoAPIServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8251BE2C05E9BB00DD32A3 /* CryptoAPIServiceTests.swift */; };
 		4D8251C32C05EAA800DD32A3 /* URLRequest+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8251C22C05EAA800DD32A3 /* URLRequest+.swift */; };
 		4D8251C62C05EAD700DD32A3 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8251C52C05EAD700DD32A3 /* HTTPMethod.swift */; };
 		4D8251C82C05EBBB00DD32A3 /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8251C72C05EBBB00DD32A3 /* MockURLSession.swift */; };
 		4D8251CA2C05EC4500DD32A3 /* URLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8251C92C05EC4500DD32A3 /* URLSessionProtocol.swift */; };
 		4D8251D12C0879E800DD32A3 /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8251D02C0879E800DD32A3 /* View+.swift */; };
-		4D8251D32C0DAD5000DD32A3 /* CryptoViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8251D22C0DAD5000DD32A3 /* CryptoViewModelTests.swift */; };
+		4D8251D32C0DAD5000DD32A3 /* CryptoDataViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8251D22C0DAD5000DD32A3 /* CryptoDataViewModelTests.swift */; };
 		4D8251D62C0DBAFC00DD32A3 /* XCTestCase+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8251D52C0DBAFC00DD32A3 /* XCTestCase+.swift */; };
+		4D8251DC2C0F245400DD32A3 /* CryptoTrackingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8251DB2C0F245400DD32A3 /* CryptoTrackingViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,15 +46,16 @@
 		4D8251B22C05CDDB00DD32A3 /* CryptoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoModel.swift; sourceTree = "<group>"; };
 		4D8251B52C05D21D00DD32A3 /* CryptoAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoAPIService.swift; sourceTree = "<group>"; };
 		4D8251B72C05D2A100DD32A3 /* CryptoAPIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoAPIEndpoint.swift; sourceTree = "<group>"; };
-		4D8251BA2C05DA7500DD32A3 /* CryptoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoViewModel.swift; sourceTree = "<group>"; };
+		4D8251BA2C05DA7500DD32A3 /* CryptoDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoDataViewModel.swift; sourceTree = "<group>"; };
 		4D8251BE2C05E9BB00DD32A3 /* CryptoAPIServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoAPIServiceTests.swift; sourceTree = "<group>"; };
 		4D8251C22C05EAA800DD32A3 /* URLRequest+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+.swift"; sourceTree = "<group>"; };
 		4D8251C52C05EAD700DD32A3 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		4D8251C72C05EBBB00DD32A3 /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
 		4D8251C92C05EC4500DD32A3 /* URLSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProtocol.swift; sourceTree = "<group>"; };
 		4D8251D02C0879E800DD32A3 /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
-		4D8251D22C0DAD5000DD32A3 /* CryptoViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoViewModelTests.swift; sourceTree = "<group>"; };
+		4D8251D22C0DAD5000DD32A3 /* CryptoDataViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoDataViewModelTests.swift; sourceTree = "<group>"; };
 		4D8251D52C0DBAFC00DD32A3 /* XCTestCase+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+.swift"; sourceTree = "<group>"; };
+		4D8251DB2C0F245400DD32A3 /* CryptoTrackingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTrackingViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,7 +123,7 @@
 				4D8251D42C0DBAEC00DD32A3 /* Extensions */,
 				4D8251C02C05E9F100DD32A3 /* Mocks */,
 				4D8251C12C05E9FE00DD32A3 /* Network */,
-				4D8251D22C0DAD5000DD32A3 /* CryptoViewModelTests.swift */,
+				4D8251D22C0DAD5000DD32A3 /* CryptoDataViewModelTests.swift */,
 			);
 			path = CryptoWidgetKitAppTests;
 			sourceTree = "<group>";
@@ -154,7 +156,8 @@
 		4D8251B92C05DA6000DD32A3 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				4D8251BA2C05DA7500DD32A3 /* CryptoViewModel.swift */,
+				4D8251BA2C05DA7500DD32A3 /* CryptoDataViewModel.swift */,
+				4D8251DB2C0F245400DD32A3 /* CryptoTrackingViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -318,8 +321,9 @@
 				4D8251B82C05D2A200DD32A3 /* CryptoAPIEndpoint.swift in Sources */,
 				4D8251C62C05EAD700DD32A3 /* HTTPMethod.swift in Sources */,
 				4D72664A2C049D800035E348 /* CryptoWidgetKitApp.swift in Sources */,
+				4D8251DC2C0F245400DD32A3 /* CryptoTrackingViewModel.swift in Sources */,
 				4D8251C32C05EAA800DD32A3 /* URLRequest+.swift in Sources */,
-				4D8251BB2C05DA7500DD32A3 /* CryptoViewModel.swift in Sources */,
+				4D8251BB2C05DA7500DD32A3 /* CryptoDataViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,7 +332,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D8251C82C05EBBB00DD32A3 /* MockURLSession.swift in Sources */,
-				4D8251D32C0DAD5000DD32A3 /* CryptoViewModelTests.swift in Sources */,
+				4D8251D32C0DAD5000DD32A3 /* CryptoDataViewModelTests.swift in Sources */,
 				4D8251D62C0DBAFC00DD32A3 /* XCTestCase+.swift in Sources */,
 				4D8251BF2C05E9BB00DD32A3 /* CryptoAPIServiceTests.swift in Sources */,
 			);

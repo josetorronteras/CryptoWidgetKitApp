@@ -26,7 +26,7 @@ struct CryptoWidgetKitApp {
 // MARK: - ProductionApp
 struct ProductionApp: App {
     
-    @State var cryptoViewModel = CryptoViewModel()
+    @State var cryptoViewModel = CryptoDataViewModel()
     
     var body: some Scene {
         WindowGroup {

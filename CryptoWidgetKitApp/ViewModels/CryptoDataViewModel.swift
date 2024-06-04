@@ -1,5 +1,5 @@
 //
-//  CryptoViewModel.swift
+//  CryptoDataViewModel.swift
 //  CryptoWidgetKitApp
 //
 //  Created by Jose Jesus Torronteras Hernandez on 28/5/24.
@@ -7,9 +7,9 @@
 
 import Foundation
 
-// MARK: - CryptoViewModel
+// MARK: - CryptoDataViewModel
 @Observable
-final class CryptoViewModel {
+final class CryptoDataViewModel {
     
     // MARK: - Published Properties
     private(set) var cryptos: [Crypto] = []
@@ -38,7 +38,7 @@ final class CryptoViewModel {
 }
 
 // MARK: - Public Methods
-extension CryptoViewModel {
+extension CryptoDataViewModel {
     
     /// Fetch the cryptos from API and update the cryptos array
     func fetchInitialData() async {
@@ -80,7 +80,7 @@ extension CryptoViewModel {
 }
 
 // MARK: - Private Methods
-private extension CryptoViewModel {
+private extension CryptoDataViewModel {
     
     /// Method to fetch data from API and update the cryptos array
     func fetchData(page: Int?) async {
