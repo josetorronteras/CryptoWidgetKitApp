@@ -24,6 +24,9 @@
 		4D8251D32C0DAD5000DD32A3 /* CryptoDataViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8251D22C0DAD5000DD32A3 /* CryptoDataViewModelTests.swift */; };
 		4D8251D62C0DBAFC00DD32A3 /* XCTestCase+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8251D52C0DBAFC00DD32A3 /* XCTestCase+.swift */; };
 		4D8251DC2C0F245400DD32A3 /* CryptoTrackingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8251DB2C0F245400DD32A3 /* CryptoTrackingViewModel.swift */; };
+		4D8251DE2C0F3E3900DD32A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8251DD2C0F3E3900DD32A3 /* AppDelegate.swift */; };
+		4D8251E12C0F434E00DD32A3 /* ProductionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8251E02C0F434E00DD32A3 /* ProductionApp.swift */; };
+		4D8251E32C0F436B00DD32A3 /* TestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8251E22C0F436B00DD32A3 /* TestApp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +59,9 @@
 		4D8251D22C0DAD5000DD32A3 /* CryptoDataViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoDataViewModelTests.swift; sourceTree = "<group>"; };
 		4D8251D52C0DBAFC00DD32A3 /* XCTestCase+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+.swift"; sourceTree = "<group>"; };
 		4D8251DB2C0F245400DD32A3 /* CryptoTrackingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTrackingViewModel.swift; sourceTree = "<group>"; };
+		4D8251DD2C0F3E3900DD32A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4D8251E02C0F434E00DD32A3 /* ProductionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionApp.swift; sourceTree = "<group>"; };
+		4D8251E22C0F436B00DD32A3 /* TestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +109,7 @@
 				4D8251B92C05DA6000DD32A3 /* ViewModels */,
 				4D8251CC2C0878B900DD32A3 /* Views */,
 				4D8251B42C05D20B00DD32A3 /* Network */,
+				4D8251DF2C0F3E3D00DD32A3 /* Supporting Files */,
 				4D7266732C049D930035E348 /* Resources */,
 				4D72664F2C049D810035E348 /* Preview Content */,
 			);
@@ -213,6 +220,16 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		4D8251DF2C0F3E3D00DD32A3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4D8251DD2C0F3E3900DD32A3 /* AppDelegate.swift */,
+				4D8251E02C0F434E00DD32A3 /* ProductionApp.swift */,
+				4D8251E22C0F436B00DD32A3 /* TestApp.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -313,9 +330,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D8251DE2C0F3E3900DD32A3 /* AppDelegate.swift in Sources */,
+				4D8251E32C0F436B00DD32A3 /* TestApp.swift in Sources */,
 				4D8251CA2C05EC4500DD32A3 /* URLSessionProtocol.swift in Sources */,
 				4D8251B32C05CDDB00DD32A3 /* CryptoModel.swift in Sources */,
 				4D8251B62C05D21D00DD32A3 /* CryptoAPIService.swift in Sources */,
+				4D8251E12C0F434E00DD32A3 /* ProductionApp.swift in Sources */,
 				4D72664C2C049D800035E348 /* ContentView.swift in Sources */,
 				4D8251D12C0879E800DD32A3 /* View+.swift in Sources */,
 				4D8251B82C05D2A200DD32A3 /* CryptoAPIEndpoint.swift in Sources */,
