@@ -1,0 +1,28 @@
+{
+  "configurations" : [
+    {
+      "id" : "9F0B5D53-33C8-4636-BB91-BF892799921C",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:CryptoWidgetKitApp.xcodeproj",
+      "identifier" : "4D7266452C049D800035E348",
+      "name" : "CryptoWidgetKitApp"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:CryptoWidgetKitApp.xcodeproj",
+        "identifier" : "4D7266552C049D820035E348",
+        "name" : "CryptoWidgetKitAppTests"
+      }
+    }
+  ],
+  "version" : 1
+}
