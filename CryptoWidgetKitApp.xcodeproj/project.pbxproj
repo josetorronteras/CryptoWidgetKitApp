@@ -62,6 +62,7 @@
 		4D8251DD2C0F3E3900DD32A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D8251E02C0F434E00DD32A3 /* ProductionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionApp.swift; sourceTree = "<group>"; };
 		4D8251E22C0F436B00DD32A3 /* TestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestApp.swift; sourceTree = "<group>"; };
+		4D8251E42C0F7B0300DD32A3 /* CryptoWidgetKitApp.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = CryptoWidgetKitApp.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				4D8251D42C0DBAEC00DD32A3 /* Extensions */,
+				4D8251E42C0F7B0300DD32A3 /* CryptoWidgetKitApp.xctestplan */,
 				4D8251C02C05E9F100DD32A3 /* Mocks */,
 				4D8251C12C05E9FE00DD32A3 /* Network */,
 				4D8251D22C0DAD5000DD32A3 /* CryptoDataViewModelTests.swift */,
