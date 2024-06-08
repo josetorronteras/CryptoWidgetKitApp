@@ -22,11 +22,12 @@
 		4D8251CA2C05EC4500DD32A3 /* URLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8251C92C05EC4500DD32A3 /* URLSessionProtocol.swift */; };
 		4D8251D12C0879E800DD32A3 /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8251D02C0879E800DD32A3 /* View+.swift */; };
 		4D8251D32C0DAD5000DD32A3 /* CryptoDataViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8251D22C0DAD5000DD32A3 /* CryptoDataViewModelTests.swift */; };
-		4D8251D62C0DBAFC00DD32A3 /* XCTestCase+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8251D52C0DBAFC00DD32A3 /* XCTestCase+.swift */; };
 		4D8251DC2C0F245400DD32A3 /* CryptoTrackingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8251DB2C0F245400DD32A3 /* CryptoTrackingViewModel.swift */; };
 		4D8251DE2C0F3E3900DD32A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8251DD2C0F3E3900DD32A3 /* AppDelegate.swift */; };
 		4D8251E12C0F434E00DD32A3 /* ProductionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8251E02C0F434E00DD32A3 /* ProductionApp.swift */; };
 		4D8251E32C0F436B00DD32A3 /* TestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8251E22C0F436B00DD32A3 /* TestApp.swift */; };
+		4DF5451F2C1467280024F81F /* CryptoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF5451E2C1467280024F81F /* CryptoRow.swift */; };
+		4DF545222C146AE70024F81F /* CryptoTrackingViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF545212C146AE70024F81F /* CryptoTrackingViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,12 +58,13 @@
 		4D8251C92C05EC4500DD32A3 /* URLSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProtocol.swift; sourceTree = "<group>"; };
 		4D8251D02C0879E800DD32A3 /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
 		4D8251D22C0DAD5000DD32A3 /* CryptoDataViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoDataViewModelTests.swift; sourceTree = "<group>"; };
-		4D8251D52C0DBAFC00DD32A3 /* XCTestCase+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+.swift"; sourceTree = "<group>"; };
 		4D8251DB2C0F245400DD32A3 /* CryptoTrackingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTrackingViewModel.swift; sourceTree = "<group>"; };
 		4D8251DD2C0F3E3900DD32A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D8251E02C0F434E00DD32A3 /* ProductionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionApp.swift; sourceTree = "<group>"; };
 		4D8251E22C0F436B00DD32A3 /* TestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestApp.swift; sourceTree = "<group>"; };
 		4D8251E42C0F7B0300DD32A3 /* CryptoWidgetKitApp.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = CryptoWidgetKitApp.xctestplan; sourceTree = "<group>"; };
+		4DF5451E2C1467280024F81F /* CryptoRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoRow.swift; sourceTree = "<group>"; };
+		4DF545212C146AE70024F81F /* CryptoTrackingViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTrackingViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,11 +130,10 @@
 		4D7266592C049D820035E348 /* CryptoWidgetKitAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				4D8251D42C0DBAEC00DD32A3 /* Extensions */,
 				4D8251E42C0F7B0300DD32A3 /* CryptoWidgetKitApp.xctestplan */,
 				4D8251C02C05E9F100DD32A3 /* Mocks */,
 				4D8251C12C05E9FE00DD32A3 /* Network */,
-				4D8251D22C0DAD5000DD32A3 /* CryptoDataViewModelTests.swift */,
+				4DF545202C146ADB0024F81F /* ViewModels */,
 			);
 			path = CryptoWidgetKitAppTests;
 			sourceTree = "<group>";
@@ -202,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				4D8251CF2C0879D400DD32A3 /* Extensions */,
+				4DF5451E2C1467280024F81F /* CryptoRow.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -214,14 +216,6 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		4D8251D42C0DBAEC00DD32A3 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				4D8251D52C0DBAFC00DD32A3 /* XCTestCase+.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
 		4D8251DF2C0F3E3D00DD32A3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,6 +224,15 @@
 				4D8251E22C0F436B00DD32A3 /* TestApp.swift */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4DF545202C146ADB0024F81F /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				4D8251D22C0DAD5000DD32A3 /* CryptoDataViewModelTests.swift */,
+				4DF545212C146AE70024F81F /* CryptoTrackingViewModelTests.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -346,6 +349,7 @@
 				4D8251DC2C0F245400DD32A3 /* CryptoTrackingViewModel.swift in Sources */,
 				4D8251C32C05EAA800DD32A3 /* URLRequest+.swift in Sources */,
 				4D8251BB2C05DA7500DD32A3 /* CryptoDataViewModel.swift in Sources */,
+				4DF5451F2C1467280024F81F /* CryptoRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,9 +357,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DF545222C146AE70024F81F /* CryptoTrackingViewModelTests.swift in Sources */,
 				4D8251C82C05EBBB00DD32A3 /* MockURLSession.swift in Sources */,
 				4D8251D32C0DAD5000DD32A3 /* CryptoDataViewModelTests.swift in Sources */,
-				4D8251D62C0DBAFC00DD32A3 /* XCTestCase+.swift in Sources */,
 				4D8251BF2C05E9BB00DD32A3 /* CryptoAPIServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

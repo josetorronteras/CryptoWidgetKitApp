@@ -35,22 +35,22 @@ struct ContentView: View {
                         })
                     }
                 }
-            }
-            
-            // Section for load more button
-            if !cryptoViewModel.showSkeleton {
-                Section {
-                    Button(action: {
-                        Task {
-                            await cryptoViewModel.loadMoreData()
-                        }
-                    }, label: {
-                        if cryptoViewModel.isLoading {
-                            ProgressView()
-                        } else {
-                            Text("Load more")
-                        }
-                    })
+                
+                // Section for load more button
+                if !cryptoViewModel.showSkeleton {
+                    Section {
+                        Button(action: {
+                            Task {
+                                await cryptoViewModel.loadMoreData()
+                            }
+                        }, label: {
+                            if cryptoViewModel.isLoading {
+                                ProgressView()
+                            } else {
+                                Text("Load more")
+                            }
+                        })
+                    }
                 }
             }
         }
@@ -68,24 +68,6 @@ struct ContentView: View {
                     .font(.footnote)
                     .foregroundColor(.secondary)
                     .frame(maxWidth: .infinity)
-            }
-        }
-    }
-}
-
-// MARK: - CryptoRow
-struct CryptoRow: View {
-    let crypto: Crypto
-    let isFavorite: Bool
-    let action: () -> Void
-    
-    var body: some View {
-        HStack {
-            Text(crypto.coinInfo.fullName)
-            Spacer()
-            Text(crypto.display?.usd.price ?? "0")
-            Button(action: action) {
-                Image(systemName: isFavorite ? "star.fill" : "star")
             }
         }
     }
