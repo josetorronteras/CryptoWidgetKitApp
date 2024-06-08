@@ -11,10 +11,20 @@ import Foundation
 @Observable
 final class CryptoViewModel {
     
-    // MARK: - Properties
+    // MARK: - Published Properties
     private(set) var cryptos: [Crypto] = []
-    private(set) var isLoading: Bool = true
+    private(set) var showSkeleton: Bool = false
+    private(set) var isLoading: Bool = false
     var showError: Bool = false
+    
+    // MARK: - Private Properties
+    private var page: Int = 0 {
+        didSet {
+            if page < 0 {
+                page = 0
+            }
+        }
+    }
     
     // MARK: - Dependencies
     private let apiService: CryptoAPIService
@@ -31,15 +41,63 @@ final class CryptoViewModel {
 extension CryptoViewModel {
     
     /// Fetch the cryptos from API and update the cryptos array
-    func fetch() async {
-        isLoading = true
+    func fetchInitialData() async {
+        showSkeleton = true
+        defer { 
+            if !showError {
+                showSkeleton = false
+            }
+        }
+        await fetchData(page: nil)
+    }
+    
+    /// Load more cryptos from API and append to the cryptos array
+    func loadMoreData() async {
+        page += 1
+        await fetchData(page: page)
+    }
+    
+    /// Refresh all data from API and update the cryptos array
+    func refreshData() async {
+        showSkeleton = true
+        defer {
+            if !showError {
+                showSkeleton = false
+            }
+        }
+        var allData: [Crypto] = []
+        for p in 0...page {
+            do {
+                let data = try await apiService.fetchRetrieveTopList(page: p).data
+                allData.append(contentsOf: data)
+            } catch {
+                showError = true
+                return
+            }
+        }
+        cryptos = allData
+    }
+}
+
+// MARK: - Private Methods
+private extension CryptoViewModel {
+    
+    /// Method to fetch data from API and update the cryptos array
+    func fetchData(page: Int?) async {
+        if page != nil {
+            isLoading = true
+        }
+        defer { isLoading = false }
         do {
-            sleep(3)
-            cryptos = try await apiService.fetchRetrieveFullList().data
-            isLoading = false
+            let data = try await apiService.fetchRetrieveTopList(page: page).data
+            if page != nil && page! > 0 {
+                cryptos.append(contentsOf: data)
+            } else {
+                cryptos = data
+            }
         } catch {
-            print(error)
             showError = true
+            self.page = (page ?? 0) - 1
         }
     }
 }

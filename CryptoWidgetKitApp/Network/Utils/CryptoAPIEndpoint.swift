@@ -9,15 +9,21 @@ import Foundation
 
 // MARK: - CryptoAPIEndpoint
 enum CryptoAPIEndpoint {
-    case fullList
+    case topList(page: Int?)
 }
 
 extension CryptoAPIEndpoint {
     
     var url: URL {
         switch self {
-        case .fullList:
-            URL(string: "https://min-api.cryptocompare.com/data/top/totalvolfull?tsym=USD")!
+        case .topList(let page):
+            var components = URLComponents(string: "https://min-api.cryptocompare.com/data/top/totalvolfull")!
+            var queryItems = [URLQueryItem(name: "tsym", value: "USD")]
+            if let page = page {
+                queryItems.append(URLQueryItem(name: "page", value: String(page)))
+            }
+            components.queryItems = queryItems
+            return components.url!
         }
     }
 }

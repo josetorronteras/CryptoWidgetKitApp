@@ -8,7 +8,23 @@
 import SwiftUI
 
 @main
-struct CryptoWidgetKitApp: App {
+struct CryptoWidgetKitApp {
+    
+    static func main() {
+        guard isProduction() else {
+            TestApp.main()
+            return
+        }
+        ProductionApp.main()
+    }
+    
+    private static func isProduction() -> Bool {
+        return NSClassFromString("XCTestCase") == nil
+    }
+}
+
+// MARK: - ProductionApp
+struct ProductionApp: App {
     
     @State var cryptoViewModel = CryptoViewModel()
     
@@ -17,5 +33,12 @@ struct CryptoWidgetKitApp: App {
             ContentView()
                 .environment(cryptoViewModel)
         }
+    }
+}
+
+// MARK: - TestApp
+struct TestApp: App {
+    var body: some Scene {
+        WindowGroup {}
     }
 }

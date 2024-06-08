@@ -38,7 +38,7 @@ extension CryptoAPIServiceTests {
         
         // when
         do {
-            let result = try await sut.fetchRetrieveFullList()
+            let result = try await sut.fetchRetrieveTopList()
             // then
             XCTAssertEqual(result.data.count, 2)
             XCTAssertEqual(result.data[0].coinInfo.fullName, "Bitcoin")
@@ -59,7 +59,7 @@ extension CryptoAPIServiceTests {
         
         // when
         do {
-            _ = try await sut.fetchRetrieveFullList()
+            _ = try await sut.fetchRetrieveTopList()
             XCTFail("Expected to throw error, but succeeded")
         } catch {
             // then
@@ -77,7 +77,7 @@ extension CryptoAPIServiceTests {
         
         // when
         do {
-            _ = try await sut.fetchRetrieveFullList()
+            _ = try await sut.fetchRetrieveTopList()
             XCTFail("Expected to throw error, but succeeded")
         } catch {
             // then
@@ -98,7 +98,7 @@ fileprivate extension CryptoAPIServiceTests {
     
     var successFullListResponse: HTTPURLResponse {
         HTTPURLResponse(
-            url: CryptoAPIEndpoint.fullList.url,
+            url: CryptoAPIEndpoint.topList(page: nil).url,
             statusCode: 200,
             httpVersion: nil,
             headerFields: nil)!
@@ -106,7 +106,7 @@ fileprivate extension CryptoAPIServiceTests {
     
     var badFullListResponse: HTTPURLResponse {
         HTTPURLResponse(
-            url: CryptoAPIEndpoint.fullList.url,
+            url: CryptoAPIEndpoint.topList(page: nil).url,
             statusCode: 500,
             httpVersion: nil,
             headerFields: nil)!
