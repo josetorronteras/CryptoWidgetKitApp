@@ -9,19 +9,34 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @Environment(CryptoViewModel.self) var cryptoViewModel
+    @Environment(CryptoDataViewModel.self) var cryptoDataViewModel
+    @Environment(CryptoTrackingViewModel.self) var cryptoTrackingViewModel
     
     var body: some View {
-        @Bindable var cryptoViewModel = cryptoViewModel
+        @Bindable var cryptoViewModel = cryptoDataViewModel
         NavigationStack {
             List {
-                ForEach(cryptoViewModel.cryptos, id: \.coinInfo.id){ crypto in
-                    HStack {
-                        Text(crypto.coinInfo.fullName)
-                        Spacer()
-                        Text(crypto.display?.usd.price ?? "0")
+                // Section for tracking cryptos
+                if !cryptoTrackingViewModel.trackingCryptos.isEmpty {
+                    Section(header: Text("Favorite Cryptos")) {
+                        ForEach(cryptoViewModel.cryptos.filter { cryptoTrackingViewModel.contains($0) }, id: \.coinInfo.id) { crypto in
+                            CryptoRow(crypto: crypto, isFavorite: cryptoTrackingViewModel.contains(crypto), action: {
+                                cryptoTrackingViewModel.toggleTrackingCrypto(crypto)
+                            })
+                        }
                     }
                 }
+                
+                // Section for all cryptos
+                Section(header: Text("All Cryptos")) {
+                    ForEach(cryptoViewModel.cryptos.filter { !cryptoTrackingViewModel.contains($0) }, id: \.coinInfo.id) { crypto in
+                        CryptoRow(crypto: crypto, isFavorite: cryptoTrackingViewModel.contains(crypto), action: {
+                            cryptoTrackingViewModel.toggleTrackingCrypto(crypto)
+                        })
+                    }
+                }
+                
+                // Section for load more button
                 if !cryptoViewModel.showSkeleton {
                     Section {
                         Button(action: {
@@ -38,21 +53,21 @@ struct ContentView: View {
                     }
                 }
             }
-            .redacted(reason: cryptoViewModel.showSkeleton ? .placeholder : [])
-            .task { await cryptoViewModel.fetchInitialData() }
-            .refreshable { await cryptoViewModel.refreshData() }
-            .errorAlert(isPresented: $cryptoViewModel.showError) {
-                Task {
-                    await cryptoViewModel.refreshData()
-                }
+        }
+        .redacted(reason: cryptoViewModel.showSkeleton ? .placeholder : [])
+        .task { await cryptoViewModel.fetchInitialData() }
+        .refreshable { await cryptoViewModel.refreshData() }
+        .errorAlert(isPresented: $cryptoViewModel.showError) {
+            Task {
+                await cryptoViewModel.refreshData()
             }
-            .toolbar {
-                ToolbarItemGroup(placement: .bottomBar) {
-                    Text("API Cache 120 seconds")
-                        .font(.footnote)
-                        .foregroundColor(.secondary)
-                        .frame(maxWidth: .infinity)
-                }
+        }
+        .toolbar {
+            ToolbarItemGroup(placement: .bottomBar) {
+                Text("API Cache 120 seconds")
+                    .font(.footnote)
+                    .foregroundColor(.secondary)
+                    .frame(maxWidth: .infinity)
             }
         }
     }
@@ -60,5 +75,6 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .environment(CryptoViewModel())
+        .environment(CryptoDataViewModel())
+        .environment(CryptoTrackingViewModel())
 }

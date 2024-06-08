@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// MARK: - CryptoWidgetKitApp
 @main
 struct CryptoWidgetKitApp {
     
@@ -17,28 +18,12 @@ struct CryptoWidgetKitApp {
         }
         ProductionApp.main()
     }
+}
+
+// MARK: - Private Methods
+private extension CryptoWidgetKitApp {
     
-    private static func isProduction() -> Bool {
+    static func isProduction() -> Bool {
         return NSClassFromString("XCTestCase") == nil
-    }
-}
-
-// MARK: - ProductionApp
-struct ProductionApp: App {
-    
-    @State var cryptoViewModel = CryptoViewModel()
-    
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-                .environment(cryptoViewModel)
-        }
-    }
-}
-
-// MARK: - TestApp
-struct TestApp: App {
-    var body: some Scene {
-        WindowGroup {}
     }
 }
