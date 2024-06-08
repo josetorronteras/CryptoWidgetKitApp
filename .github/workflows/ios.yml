@@ -34,14 +34,20 @@ jobs:
           xcodebuild \
             -scheme "$SCHEME" \
             -destination "platform=iOS Simulator,name=${SIMULATOR},OS=${{ matrix.os_version }}" \
-            clean build
+            build-for-testing | xcpretty --color --simple
       - name: Test
         run: |
           xcodebuild \
             -scheme "$SCHEME" \
             -destination "platform=iOS Simulator,name=${SIMULATOR},OS=${{ matrix.os_version }}" \
             -enableCodeCoverage YES \
-            test
+            -resultBundlePath TestResults \
+            test-without-building | xcpretty --color --simple
+      - name: Xcresulttool
+        uses: kishikawakatsumi/xcresulttool@v1
+        with:
+          path: TestResults.xcresult
+        if: success() || failure()
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v4.0.1
         with:
