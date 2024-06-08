@@ -27,3 +27,10 @@ private extension CryptoWidgetKitApp {
         return NSClassFromString("XCTestCase") == nil
     }
 }
+
+// MARK: - TestApp
+struct TestApp: App {
+    var body: some Scene {
+        WindowGroup {}
+    }
+}
