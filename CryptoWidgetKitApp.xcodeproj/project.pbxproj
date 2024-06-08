@@ -22,7 +22,6 @@
 		4D8251CA2C05EC4500DD32A3 /* URLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8251C92C05EC4500DD32A3 /* URLSessionProtocol.swift */; };
 		4D8251D12C0879E800DD32A3 /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8251D02C0879E800DD32A3 /* View+.swift */; };
 		4D8251D32C0DAD5000DD32A3 /* CryptoViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8251D22C0DAD5000DD32A3 /* CryptoViewModelTests.swift */; };
-		4D8251D62C0DBAFC00DD32A3 /* XCTestCase+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8251D52C0DBAFC00DD32A3 /* XCTestCase+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +52,6 @@
 		4D8251C92C05EC4500DD32A3 /* URLSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProtocol.swift; sourceTree = "<group>"; };
 		4D8251D02C0879E800DD32A3 /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
 		4D8251D22C0DAD5000DD32A3 /* CryptoViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoViewModelTests.swift; sourceTree = "<group>"; };
-		4D8251D52C0DBAFC00DD32A3 /* XCTestCase+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+.swift"; sourceTree = "<group>"; };
 		4D8251E42C0F7B0300DD32A3 /* CryptoWidgetKitApp.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = CryptoWidgetKitApp.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,7 +117,6 @@
 		4D7266592C049D820035E348 /* CryptoWidgetKitAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				4D8251D42C0DBAEC00DD32A3 /* Extensions */,
 				4D8251E42C0F7B0300DD32A3 /* CryptoWidgetKitApp.xctestplan */,
 				4D8251C02C05E9F100DD32A3 /* Mocks */,
 				4D8251C12C05E9FE00DD32A3 /* Network */,
@@ -200,14 +197,6 @@
 			isa = PBXGroup;
 			children = (
 				4D8251D02C0879E800DD32A3 /* View+.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		4D8251D42C0DBAEC00DD32A3 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				4D8251D52C0DBAFC00DD32A3 /* XCTestCase+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -331,7 +320,6 @@
 			files = (
 				4D8251C82C05EBBB00DD32A3 /* MockURLSession.swift in Sources */,
 				4D8251D32C0DAD5000DD32A3 /* CryptoViewModelTests.swift in Sources */,
-				4D8251D62C0DBAFC00DD32A3 /* XCTestCase+.swift in Sources */,
 				4D8251BF2C05E9BB00DD32A3 /* CryptoAPIServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
